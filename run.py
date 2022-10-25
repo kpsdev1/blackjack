@@ -15,5 +15,24 @@ def typewriter(words):
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(0.15)
-       
-typewriter(f"Hi {name}, Welcome to the blackJack table.")
+
+
+def greeting():
+    typewriter(f"Hi {name}, welcome to the blackJack table.")
+    print()
+    time.sleep(1)
+    while True:
+        start = input('Are you ready to Play? Type Y for Yes. Or N to leave : ')
+        if start.upper() == 'Y':
+            print('Dealing cards.......')
+            time.sleep(1)
+            break
+        elif start.upper() == 'N':
+            print('Goodbye.................')
+            time.sleep(1)
+            sys.exit()
+        else:
+            print('Invalid response')
+            print()
+
+greeting()
