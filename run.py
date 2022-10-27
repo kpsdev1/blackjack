@@ -57,7 +57,34 @@ def deal_card(turn):
     turn.append(card)
     return turn
 
-print(f"Players cards are {deal_first_two_cards(player_hand)}")
-print(f"Dealers cards are {deal_first_two_cards(dealer_hand)}")
-print(f"Players next card {deal_card(player_hand)}")
+# players total
+def player_total(turn):
+    global player_score
+    player_score = 0
+    for ind in turn:
+        if 'J' == ind or 'Q' == ind or 'K' == ind:
+            player_score += 10
+        if 'A' == ind:
+            player_score += 11
+        if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
+            player_score += ind
+    return player_score
 
+
+# Dealers total
+def dealer_total(turn):
+    global dealer_score
+    dealer_score = 0
+    for ind in turn:
+        if 'J' == ind or 'Q' == ind or 'K' == ind:
+            dealer_score += 10
+        if 'A' == ind:
+            dealer_score += 11
+        if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
+            dealer_score += ind
+    return dealer_score
+
+
+print(f"Dealer cards are {deal_first_two_cards(dealer_hand)} for total of {dealer_total(dealer_hand)}")
+print()
+print(f"Dealer cards are {deal_first_two_cards(player_hand)} for total of {player_total(player_hand)}")
