@@ -51,6 +51,7 @@ def deal_first_two_cards(turn):
         turn.append(cards)
     return turn
 
+
 # This deals the next cards
 def deal_card(turn):
     card = random.choice(deck)
@@ -95,9 +96,23 @@ def player_hit_or_stay(score, turn):
             score = player_total(turn)
             print(f"{turn} for a total of {score}")
         elif choice.upper() == 'S':
+            dealer_hit_or_stay(dealer_score, dealer_hand)
             return f"Your cards are {turn} for a total of {score} "
+
+# Hit or stay for the dealer
+def dealer_hit_or_stay(score, turn):
+    while score < 17:
+        deal_card(turn)
+        score = dealer_total(turn)
+    if score >= 17 and score < 21:
+        print(f"Dealers  stays for with cards {turn} for a total of {score} ")
+    print(f"Dealers Hand was {turn} with a total of {score}")
+    print()
+
+
 
 print(f"Dealer cards are {deal_first_two_cards(dealer_hand)} for total of {dealer_total(dealer_hand)}")
 print()
 print(f"Player cards are {deal_first_two_cards(player_hand)} for total of {player_total(player_hand)}")
 player_hit_or_stay(player_score, player_hand)
+print()
