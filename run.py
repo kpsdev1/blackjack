@@ -85,6 +85,19 @@ def dealer_total(turn):
     return dealer_score
 
 
+# hit or stay for the player
+def player_hit_or_stay(score, turn):
+    while score < 21:
+        choice = input(
+            'Do you want to Hit or Stay, Enter H for Hit or S for Stay? ')
+        if choice.upper() == 'H':
+            deal_card(turn)
+            score = player_total(turn)
+            print(f"{turn} for a total of {score}")
+        elif choice.upper() == 'S':
+            return f"Your cards are {turn} for a total of {score} "
+
 print(f"Dealer cards are {deal_first_two_cards(dealer_hand)} for total of {dealer_total(dealer_hand)}")
 print()
-print(f"Dealer cards are {deal_first_two_cards(player_hand)} for total of {player_total(player_hand)}")
+print(f"Player cards are {deal_first_two_cards(player_hand)} for total of {player_total(player_hand)}")
+player_hit_or_stay(player_score, player_hand)
