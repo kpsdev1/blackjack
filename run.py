@@ -175,7 +175,7 @@ def calculate_winner():
         print(Fore.RED + 'The dealer wins')
     elif dealer_score == player_score:
         print(Fore.MAGENTA + 'Its a tie')
-    print(Fore.CYAN + f"the dealer has {dealer_score} and you had {player_score}")
+    print(Fore.BLUE + f"the dealer has {dealer_score} and you had {player_score}")
     print('-' * 10)
     play_another_hand()
 
