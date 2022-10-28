@@ -138,6 +138,30 @@ def calculate_winner():
     elif dealer_score == player_score:
         print('Its a tie')
     print(f"the dealer has {dealer_score} and you had {player_score}")
+    play_another_hand()
+
+
+# function to play another hand
+def play_another_hand():
+    print()
+    global dealer_hand
+    global player_hand
+    while True:
+        play_again = input('Do you want to play again, Enter Y for Yes or N for No? ')
+        if play_again.upper() == 'Y':
+            print()
+            print()
+            print()
+            dealer_hand = []
+            player_hand = []
+            play_hand()
+        elif play_again.upper() == 'N':
+            print('Goodbye.................')
+            time.sleep(1)
+            sys.exit()
+        else:
+            print('Invalid response')
+            print()
 
 
 def play_hand():
