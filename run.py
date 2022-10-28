@@ -2,41 +2,58 @@
 import random
 import sys
 import time
-
+import colorama
+from colorama import Fore
+colorama.init(autoreset=True)
 deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
 player_hand = []
 dealer_hand = []
 player_score = 0
 dealer_score = 0
-name = input('Please enter your name? ')
 
 def typewriter(words):
+    """
+    To print text like a type writer
+    """
     for c in words:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.1)
-
+        time.sleep(0.02)
 
 
 def greeting():
+    """
+    This is the greeting function
+    that asks the Users name and greets them
+    """
     name = input('Please enter your name? ')
     typewriter(f"Hi {name}, welcome to the blackJack table.")
     print()
-    typewriter("The rules of this BlackJack table are as follows. Please read Carefully : ")
+    typewriter("The rules of this BlackJack table are as follows. \nPlease read Carefully : ")
     print()
     typewriter("1. Closest to 21 wins the hand")
     print()
-    typewriter("2. If either the computer or player goes above 21, they are consider bust and they lose the hand.")
+    typewriter("2. If you score above 21, that is bust and the Dealer wins")
     print()
-    typewriter("3. If either the player or the computer gets to 21 no matter how many \ncards it takes this is counted as blackjack ")
+    typewriter("4. If you stay, and the Dealer Busts then you win")
+    print()
+    typewriter("4. Getting 21 is counted as black jack no matter how many cards ")
     print()
 
 def play():
+    """
+    This funtion asks the user if they are 
+    ready for the game to start
+    by dealing the cards
+    """
     time.sleep(1)
     while True:
+        print()
         start = input('Are you ready for the cards to be dealt? Y for yes.\nOr press N to leave : ')
+        print()
         if start.upper() == 'Y':
             print('Dealing cards.......')
+            print()
             time.sleep(1)
             break
         elif start.upper() == 'N':
@@ -48,22 +65,31 @@ def play():
             print()
 
 
-# This deals the user and dealer the first 2 cards
+
 def deal_first_two_cards(turn):
+    """
+    This deals the user and dealer the first 2 cards
+    """
     for i in range(2):
         cards = random.choice(deck)
         turn.append(cards)
     return turn
 
 
-# This deals the next cards
+
 def deal_card(turn):
+    """
+    This deals the next cards
+    """
     card = random.choice(deck)
     turn.append(card)
     return turn
 
-# players total
+
 def player_total(turn):
+    """
+    Function to calculate the players total
+    """
     global player_score
     player_score = 0
     for ind in turn:
@@ -76,8 +102,10 @@ def player_total(turn):
     return player_score
 
 
-# Dealers total
 def dealer_total(turn):
+    """
+    Function to calculate dealers total
+    """
     global dealer_score
     dealer_score = 0
     for ind in turn:
@@ -90,8 +118,11 @@ def dealer_total(turn):
     return dealer_score
 
 
-# hit or stay for the player
 def player_hit_or_stay(score, turn):
+    """
+    If the score is less than 21 the function
+    asks the player if they want to it or stay
+    """
     while score < 21:
         choice = input(
             'Do you want to Hit or Stay, Enter H for Hit or S for Stay? ')
@@ -104,8 +135,13 @@ def player_hit_or_stay(score, turn):
             break
     return f"Your cards are {turn} for a total of {score} "
 
-# Hit or stay for the dealer
+
 def dealer_hit_or_stay(score, turn):
+    """
+    While the dealers score is
+    less than 17 it will deal them a card
+    as the deal always stnds on 17
+    """
     while score < 17:
         deal_card(turn)
         score = dealer_total(turn)
@@ -115,34 +151,41 @@ def dealer_hit_or_stay(score, turn):
     print()
 
 
-# check who is the winner
+
 def calculate_winner():
+    """
+    This function calculates the winner
+    and also calls the play another hand function
+    """
+    print()
+    print('-' * 10)
     if player_score == 21 and dealer_score != 21:
-        print('You have blackJack')
-        print(dealer_score)
+        print(Fore.GREEN + 'You have blackJack, You win')
     elif player_score > 21:
-        print('You have bust')
-        print('Dealer wins')
+        print(Fore.RED + 'You have bust, Dealer wins')
     elif dealer_score == 21 and player_score != 21:
-        print('Dealer has blackJack')
-        print('Dealer wins')
+        print(Fore.RED + 'Dealer has blackJack, Dealer wins')
     elif dealer_score > 21:
-        print('Dealer has bust')
-        print('You win')
+        print(Fore.GREEN + 'Dealer has bust, You win')
     elif player_score == 21 and dealer_score == 21:
-        print('It is a tie both have blackjack')
+        print(Fore.MAGENTA + 'It is a tie both have blackjack')
     elif (21 - dealer_score) > (21 - player_score):
-        print('You win')
+        print(Fore.GREEN + 'You win')
     elif (21 - dealer_score) < (21 - player_score):
-        print('The dealer wins')
+        print(Fore.RED + 'The dealer wins')
     elif dealer_score == player_score:
-        print('Its a tie')
-    print(f"the dealer has {dealer_score} and you had {player_score}")
+        print(Fore.MAGENTA + 'Its a tie')
+    print(Fore.CYAN + f"the dealer has {dealer_score} and you had {player_score}")
+    print('-' * 10)
     play_another_hand()
 
 
-# function to play another hand
+
 def play_another_hand():
+    """
+    This is a function that ask the player if they
+    want to play another hand 
+    """
     print()
     global dealer_hand
     global player_hand
@@ -184,7 +227,7 @@ def play_hand():
 
 
 def main():
-    # greeting()
+    greeting()
     play()
     play_hand()
 
