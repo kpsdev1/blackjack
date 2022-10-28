@@ -110,9 +110,35 @@ def dealer_hit_or_stay(score, turn):
     print()
 
 
+# check who is the winner
+def calculate_winner():
+    if player_score == 21 and dealer_score != 21:
+        print('You have blackJack')
+        print(dealer_score)
+    elif player_score > 21:
+        print('You have bust')
+        print('Dealer wins')
+    elif dealer_score == 21 and player_score != 21:
+        print('Dealer has blackJack')
+        print('Dealer wins')
+    elif dealer_score > 21:
+        print('Dealer has bust')
+        print('You win')
+    elif player_score == 21 and dealer_score == 21:
+        print('It is a tie both have blackjack')
+    elif (21 - dealer_score) > (21 - player_score):
+        print('You win')
+    elif (21 - dealer_score) < (21 - player_score):
+        print('The dealer wins')
+    elif dealer_score == player_score:
+        print('Its a tie')
+    print(f"the dealer has {dealer_score} and you had {player_score}")
+
+
 
 print(f"Dealer cards are {deal_first_two_cards(dealer_hand)} for total of {dealer_total(dealer_hand)}")
 print()
 print(f"Player cards are {deal_first_two_cards(player_hand)} for total of {player_total(player_hand)}")
 player_hit_or_stay(player_score, player_hand)
 print()
+calculate_winner()
