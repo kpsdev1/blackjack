@@ -17,7 +17,9 @@ def typewriter(words):
         time.sleep(0.1)
 
 
+
 def greeting():
+    name = input('Please enter your name? ')
     typewriter(f"Hi {name}, welcome to the blackJack table.")
     print()
     typewriter("The rules of this BlackJack table are as follows. Please read Carefully : ")
@@ -28,9 +30,11 @@ def greeting():
     print()
     typewriter("3. If either the player or the computer gets to 21 no matter how many \ncards it takes this is counted as blackjack ")
     print()
+
+def play():
     time.sleep(1)
     while True:
-        start = input('Are you ready to Play? Type Y for Yes. Or N to leave : ')
+        start = input('Are you ready for the cards to be dealt? Y for yes.\nOr press N to leave : ')
         if start.upper() == 'Y':
             print('Dealing cards.......')
             time.sleep(1)
@@ -89,16 +93,16 @@ def dealer_total(turn):
 # hit or stay for the player
 def player_hit_or_stay(score, turn):
     while score < 21:
-        print()
-        choice = input('Do you want to Hit or Stay, Enter H for Hit or S for Stay? ')
-        print()
+        choice = input(
+            'Do you want to Hit or Stay, Enter H for Hit or S for Stay? ')
         if choice.upper() == 'H':
             deal_card(turn)
             score = player_total(turn)
-            print(f"Your Cards are {turn} for a total of {score}")
+            print(f"{turn} for a total of {score}")
         elif choice.upper() == 'S':
             dealer_hit_or_stay(dealer_score, dealer_hand)
-            return f"Your cards are {turn} for a total of {score} "
+            break
+    return f"Your cards are {turn} for a total of {score} "
 
 # Hit or stay for the dealer
 def dealer_hit_or_stay(score, turn):
@@ -136,8 +140,7 @@ def calculate_winner():
     print(f"the dealer has {dealer_score} and you had {player_score}")
 
 
-def main():
-    greeting()
+def play_hand():
     deal_for_player = deal_first_two_cards
     total_player = player_total
     player_choice = player_hit_or_stay
@@ -149,12 +152,17 @@ def main():
 
     print(f"Dealer cards are {first_2_dealer} for total of {total_for_dealer(dealer_hand)}")
     print()
-    time.sleep(1)
-    print(
-        f"Your cards are {deal_for_player(player_hand)} and your total is {total_player(player_hand)}")
+    time.sleep(2)
+    print(f"Your cards are {deal_for_player(player_hand)} and your total is {total_player(player_hand)}")
     print()
     print(player_choice(player_score, player_hand))
     calculate_winner()
+
+
+def main():
+    # greeting()
+    play()
+    play_hand()
 
 
 main()
