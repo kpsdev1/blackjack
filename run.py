@@ -89,12 +89,13 @@ def dealer_total(turn):
 # hit or stay for the player
 def player_hit_or_stay(score, turn):
     while score < 21:
-        choice = input(
-            'Do you want to Hit or Stay, Enter H for Hit or S for Stay? ')
+        print()
+        choice = input('Do you want to Hit or Stay, Enter H for Hit or S for Stay? ')
+        print()
         if choice.upper() == 'H':
             deal_card(turn)
             score = player_total(turn)
-            print(f"{turn} for a total of {score}")
+            print(f"Your Cards are {turn} for a total of {score}")
         elif choice.upper() == 'S':
             dealer_hit_or_stay(dealer_score, dealer_hand)
             return f"Your cards are {turn} for a total of {score} "
@@ -135,10 +136,25 @@ def calculate_winner():
     print(f"the dealer has {dealer_score} and you had {player_score}")
 
 
+def main():
+    greeting()
+    deal_for_player = deal_first_two_cards
+    total_player = player_total
+    player_choice = player_hit_or_stay
 
-print(f"Dealer cards are {deal_first_two_cards(dealer_hand)} for total of {dealer_total(dealer_hand)}")
-print()
-print(f"Player cards are {deal_first_two_cards(player_hand)} for total of {player_total(player_hand)}")
-player_hit_or_stay(player_score, player_hand)
-print()
-calculate_winner()
+    deal_for_dealer = deal_first_two_cards
+    total_for_dealer = dealer_total
+    dealer_choice = dealer_hit_or_stay
+    first_2_dealer = deal_for_dealer(dealer_hand)
+
+    print(f"Dealer cards are {first_2_dealer} for total of {total_for_dealer(dealer_hand)}")
+    print()
+    time.sleep(1)
+    print(
+        f"Your cards are {deal_for_player(player_hand)} and your total is {total_player(player_hand)}")
+    print()
+    print(player_choice(player_score, player_hand))
+    calculate_winner()
+
+
+main()
