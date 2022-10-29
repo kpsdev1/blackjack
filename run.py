@@ -21,7 +21,7 @@ def typewriter(words):
     for c in words:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.02)
+        time.sleep(0.04)
 
 
 def greeting():
@@ -32,9 +32,9 @@ def greeting():
     welcome_sign = pyfiglet.figlet_format('WELCOME TO THE BLACKJACK TABLE', font="slant")
     rprint(f'[blue]{welcome_sign}[/blue]')
     name = input('Please enter your name? ')
-    typewriter(f"Hi {name}, Welcome to the blackJack table. Please have a read of \nrules below before playing")
+    typewriter(f"Hi {name}, Welcome to the BlackJack table. Please have a read of \nrules below before playing")
     print()
-    typewriter("The rules of this BlackJack table are as follows. \nPlease read Carefully : ")
+    typewriter("The rules of this BlackJack table are as follows. Please read Carefully:")
     print()
     typewriter("1. Closest to 21 wins the hand")
     print()
