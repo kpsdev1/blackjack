@@ -14,6 +14,7 @@ player_score = 0
 dealer_score = 0
 goodbye = pyfiglet.figlet_format('GoodBye...........', font="slant")
 
+
 def typewriter(words):
     """
     To print text like a type writer
@@ -29,10 +30,12 @@ def greeting():
     This is the greeting function
     that asks the Users name and greets them
     """
-    welcome_sign = pyfiglet.figlet_format('WELCOME TO THE BLACKJACK TABLE', font="slant")
+    welcome_sign = pyfiglet.figlet_format(
+        'WELCOME TO THE BLACKJACK TABLE', font="slant")
     rprint(f'[blue]{welcome_sign}[/blue]')
     name = input('Please enter your name? ')
     typewriter(f"Hi {name}, Welcome to the BlackJack table. Please have a read of \nrules below before playing")
+    print()
     print()
     typewriter("The rules of this BlackJack table are as follows. Please read Carefully:")
     print()
@@ -45,9 +48,10 @@ def greeting():
     typewriter("4. Getting 21 is counted as black jack no matter how many cards ")
     print()
 
+
 def play():
     """
-    This funtion asks the user if they are 
+    This funtion asks the user if they are
     ready for the game to start
     by dealing the cards
     """
@@ -70,7 +74,6 @@ def play():
             print()
 
 
-
 def deal_first_two_cards(turn):
     """
     This deals the user and dealer the first 2 cards
@@ -79,7 +82,6 @@ def deal_first_two_cards(turn):
         cards = random.choice(deck)
         turn.append(cards)
     return turn
-
 
 
 def deal_card(turn):
@@ -101,7 +103,9 @@ def player_total(turn):
         if 'J' == ind or 'Q' == ind or 'K' == ind:
             player_score += 10
         if 'A' == ind:
-            player_score += 11
+            player_score += 1
+            if player_score <= 11:
+                player_score += 10
         if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
             player_score += ind
     return player_score
@@ -117,7 +121,9 @@ def dealer_total(turn):
         if 'J' == ind or 'Q' == ind or 'K' == ind:
             dealer_score += 10
         if 'A' == ind:
-            dealer_score += 11
+            dealer_score += 1
+            if dealer_score <= 11:
+                dealer_score += 10
         if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
             dealer_score += ind
     return dealer_score
@@ -129,16 +135,19 @@ def player_hit_or_stay(score, turn):
     asks the player if they want to it or stay
     """
     while score < 21:
+        print()
         choice = input(
             'Do you want to Hit or Stay, Enter H for Hit or S for Stay? ')
+        print()
         if choice.upper() == 'H':
             deal_card(turn)
             score = player_total(turn)
-            print(f"{turn} for a total of {score}")
+            print()
         elif choice.upper() == 'S':
             dealer_hit_or_stay(dealer_score, dealer_hand)
             break
-    return f"Your cards are {turn} for a total of {score} "
+        print(f"Your cards are {turn} for a total of {score}")
+    return '-' * 50
 
 
 def dealer_hit_or_stay(score, turn):
@@ -151,10 +160,10 @@ def dealer_hit_or_stay(score, turn):
         deal_card(turn)
         score = dealer_total(turn)
     if score >= 17 and score < 21:
-        print(f"Dealers  stays for with cards {turn} for a total of {score} ")
+        print(f"Dealers stays with cards {turn} for a total of {score} ")
+        print()
     print(f"Dealers Hand was {turn} with a total of {score}")
     print()
-
 
 
 def calculate_winner():
@@ -163,7 +172,7 @@ def calculate_winner():
     and also calls the play another hand function
     """
     print()
-    print('-' * 10)
+    print()
     if player_score == 21 and dealer_score != 21:
         print(Fore.GREEN + 'You have blackJack, You win')
     elif player_score > 21:
@@ -180,16 +189,17 @@ def calculate_winner():
         print(Fore.RED + 'The dealer wins')
     elif dealer_score == player_score:
         print(Fore.MAGENTA + 'Its a tie')
-    print(Fore.BLUE + f"the dealer has {dealer_score} and you had {player_score}")
-    print('-' * 10)
+    print(Fore.BLUE + f"The dealer has {dealer_score} and you had {player_score}")
+    print()
+    print()
+    print('-' * 50)
     play_another_hand()
-
 
 
 def play_another_hand():
     """
     This is a function that ask the player if they
-    want to play another hand 
+    want to play another hand
     """
     print()
     global dealer_hand
@@ -232,8 +242,8 @@ def play_hand():
 
 
 def main():
-    greeting()
-    play()
+    # greeting()
+    # play()
     play_hand()
 
 
