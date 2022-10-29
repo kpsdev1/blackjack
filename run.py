@@ -2,6 +2,8 @@
 import random
 import sys
 import time
+import pyfiglet
+from rich import print as rprint
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
@@ -10,6 +12,7 @@ player_hand = []
 dealer_hand = []
 player_score = 0
 dealer_score = 0
+goodbye = pyfiglet.figlet_format('GoodBye...........', font="slant")
 
 def typewriter(words):
     """
@@ -26,8 +29,10 @@ def greeting():
     This is the greeting function
     that asks the Users name and greets them
     """
+    welcome_sign = pyfiglet.figlet_format('WELCOME TO THE BLACKJACK TABLE', font="slant")
+    rprint(f'[blue]{welcome_sign}[/blue]')
     name = input('Please enter your name? ')
-    typewriter(f"Hi {name}, welcome to the blackJack table.")
+    typewriter(f"Hi {name}, Welcome to the blackJack table. Please have a read of \nrules below before playing")
     print()
     typewriter("The rules of this BlackJack table are as follows. \nPlease read Carefully : ")
     print()
@@ -57,7 +62,7 @@ def play():
             time.sleep(1)
             break
         elif start.upper() == 'N':
-            print('Goodbye.................')
+            rprint(f'[yellow]{goodbye}[/yellow]')
             time.sleep(1)
             sys.exit()
         else:
@@ -199,7 +204,7 @@ def play_another_hand():
             player_hand = []
             play_hand()
         elif play_again.upper() == 'N':
-            print('Goodbye.................')
+            rprint(f'[yellow]{goodbye}[/yellow]')
             time.sleep(1)
             sys.exit()
         else:
