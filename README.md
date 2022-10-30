@@ -47,6 +47,17 @@ If the dealer busts and you do not then you wint the hand.
 - [Heroku](https://en.wikipedia.org/wiki/Heroku) is used to deploy the app.
 
 ## Testing:
+- I tested the game in the Gitpod terminal and worked as expected.
+- I tested the game locally in Vs Code terminal and also by running it in PyCharm and it worked fine.
+- I also test the game frequently since deploying it to the heroku terminal and it works correctly.
+
+### Validator Testing
+- I tested the app using the PEP8 validator in gitpod, this I had to install by running **pip3 install pycodestyle** then searching for **Python: Select Linter**
+and selecting **pycodestyle**. The PEP* erorrs would then be underlined in red and also listed in **Problems tab**
+- As you can see from the below screenshot there is no errors. The 3 warnings below come with the code intitute template that I used and this does not affect anything.
+  
+![PEP8 testing ](readme-docs/images/pep8-testing.png)
+
 
 ## Bugs:
 

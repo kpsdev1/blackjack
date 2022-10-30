@@ -34,18 +34,21 @@ def greeting():
         'WELCOME TO THE BLACKJACK TABLE', font="slant")
     rprint(f'[blue]{welcome_sign}[/blue]')
     name = input('Please enter your name? ')
-    typewriter(f"Hi {name}, Welcome to the BlackJack table. Please have a read of \nrules below before playing")
+    typewriter(f"Hi {name}, Welcome to the BlackJack table. Please have a read"
+               " of the \nrules below before playing.")
     print()
     print()
-    typewriter("The rules of this BlackJack table are as follows. Please read Carefully:")
+    typewriter("The rules of this BlackJack table are as follows. "
+               "Please read Carefully:")
     print()
-    typewriter("1. Closest to 21 wins the hand")
+    typewriter("1. Closest to 21 wins the hand.")
     print()
-    typewriter("2. If you score above 21, that is bust and the Dealer wins")
+    typewriter("2. If you score above 21, that is bust and the Dealer wins.")
     print()
-    typewriter("4. If you stay, and the Dealer Busts then you win")
+    typewriter("4. If you stay, and the Dealer Busts then you win.")
     print()
-    typewriter("4. Getting 21 is counted as black jack no matter how many cards ")
+    typewriter("4. Getting 21 is counted as blackJack no matter "
+               "how many cards it takes.")
     print()
 
 
@@ -58,7 +61,8 @@ def play():
     time.sleep(1)
     while True:
         print()
-        start = input('Are you ready for the cards to be dealt? Y for yes.\nOr press N to leave : ')
+        start = input('Are you ready for the cards to be dealt? '
+                      'Y for yes.\nOr press N to leave : ')
         print()
         if start.upper() == 'Y':
             print('Dealing cards.......')
@@ -189,7 +193,8 @@ def calculate_winner():
         print(Fore.RED + 'The dealer wins')
     elif dealer_score == player_score:
         print(Fore.MAGENTA + 'Its a tie')
-    print(Fore.BLUE + f"The dealer has {dealer_score} and you had {player_score}")
+    print(Fore.BLUE + f"The dealer has {dealer_score}"
+                      f" and you have {player_score}")
     print()
     print()
     print('-' * 50)
@@ -205,7 +210,7 @@ def play_another_hand():
     global dealer_hand
     global player_hand
     while True:
-        play_again = input('Do you want to play again, Enter Y for Yes or N for No? ')
+        play_again = input('Do you want to play again, Y for Yes, N for No? ')
         if play_again.upper() == 'Y':
             print()
             print()
@@ -232,10 +237,12 @@ def play_hand():
     dealer_choice = dealer_hit_or_stay
     first_2_dealer = deal_for_dealer(dealer_hand)
 
-    print(f"Dealer cards are {first_2_dealer} for total of {total_for_dealer(dealer_hand)}")
+    print(f"Dealer cards are {first_2_dealer} for "
+          f"total of {total_for_dealer(dealer_hand)}")
     print()
     time.sleep(2)
-    print(f"Your cards are {deal_for_player(player_hand)} and your total is {total_player(player_hand)}")
+    print(f"Your cards are {deal_for_player(player_hand)} and "
+          f"your total is {total_player(player_hand)}")
     print()
     print(player_choice(player_score, player_hand))
     calculate_winner()
