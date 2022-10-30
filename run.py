@@ -184,19 +184,19 @@ def calculate_winner():
     print()
     print()
     if player_score == 21 and dealer_score != 21:
-        print(Fore.GREEN + 'You have blackJack, You win')
+        print(Fore.GREEN + 'You have blackJack, You Win')
     elif player_score > 21:
-        print(Fore.RED + 'You have bust, Dealer wins')
+        print(Fore.RED + 'You have bust, Dealer Wins')
     elif dealer_score == 21 and player_score != 21:
         print(Fore.RED + 'Dealer has blackJack, Dealer wins')
     elif dealer_score > 21:
-        print(Fore.GREEN + 'Dealer has bust, You win')
+        print(Fore.GREEN + 'Dealer has bust, You Win')
     elif player_score == 21 and dealer_score == 21:
         print(Fore.MAGENTA + 'It is a tie both have blackjack')
     elif (21 - dealer_score) > (21 - player_score):
-        print(Fore.GREEN + 'You win')
+        print(Fore.GREEN + 'You Win')
     elif (21 - dealer_score) < (21 - player_score):
-        print(Fore.RED + 'The dealer wins')
+        print(Fore.RED + 'The dealer Wins')
     elif dealer_score == player_score:
         print(Fore.MAGENTA + 'Its a tie')
     print(Fore.BLUE + f"The dealer has {dealer_score}"
