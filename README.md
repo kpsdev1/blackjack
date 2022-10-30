@@ -70,6 +70,10 @@ code on Github.
 - Below you will see **your app was sucessfully deployed** with a **view** button below this that will take you to the url of you deployed app.
 
 ## Credits:
+- Code Coach's video on YouTube showed me how to declare the deck and create the deal card function, it also helped me on how to structure the game.The Youtube video can be found [here](https://www.youtube.com/watch?v=mpL0Y01v6tY).
+- Aphrx quick video on YouTube show me how I could structure the game differently if i had used classes, this would be super helpful to anyone who is interested in creating blackjack game. the video can be found [here](https://www.youtube.com/watch?v=C82s5WufNUA).
+- Stack overflow was used to make the large welcome and goodbye text using pyfiglet and rich. The code snipit can be found [here](https://stackoverflow.com/questions/67474578/making-coloured-ascii-text-with-python).
+- Stack over flow was used to get the typewrite effect. A variation of the code snipit can be found [here](https://stackoverflow.com/questions/19911346/create-a-typewriter-effect-animation-for-strings-in-python)
 
 ## Acknowledgements:
 - I would like to thank my mentor Adegbenga Adeye for all help throughout the project and for being really positive about the course.
