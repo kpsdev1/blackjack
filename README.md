@@ -39,6 +39,12 @@ If the dealer busts and you do not then you wint the hand.
 ## Future Features:
 
 ## Technologies Used:
+- Python was used to code the game.
+- [Gitpod](https://www.gitpod.io/about) was used to create this app and then push everything to github.
+- [Visual Studio Code](https://en.wikipedia.org/wiki/Visual_Studio_Code) was used to work on the app locally.
+- [PyCharm](https://www.jetbrains.com/lp/pycharm-anaconda/) was also used to work on the app locally.
+- [Github](https://en.wikipedia.org/wiki/GitHub) is used to store the repository.
+- [Heroku](https://en.wikipedia.org/wiki/Heroku) is used to deploy the app.
 
 ## Testing:
 
