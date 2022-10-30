@@ -1,7 +1,11 @@
 # BlackJack
 This is a command line BlackJack game I created for my Portfolio Project 3 in Python and is played in a terminal hosted on Heroku.
 This game is played by you the player against the dealer which is the computer. In this Game you try to get 21 or closer to 21 than the dealer.
+  
+ ![Am i responsive image](readme-docs/images/amiresponsive.png) 
 
+ [Click Here To Visit Live Site](https://blackjack-10.herokuapp.com/)  
+- - -  
 
 ## Table of Contents
 1. [How to play](#how-to-play)
