@@ -7,7 +7,10 @@ from rich import print as rprint
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
-deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
+deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K',
+        'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K',
+        'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K',
+        'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
 player_hand = []
 dealer_hand = []
 player_score = 0
@@ -85,6 +88,7 @@ def deal_first_two_cards(turn):
     for i in range(2):
         cards = random.choice(deck)
         turn.append(cards)
+        deck.remove(cards)
     return turn
 
 
@@ -94,6 +98,7 @@ def deal_card(turn):
     """
     card = random.choice(deck)
     turn.append(card)
+    deck.remove(card)
     return turn
 
 
@@ -139,6 +144,7 @@ def player_hit_or_stay(score, turn):
     asks the player if they want to it or stay
     """
     while score < 21:
+        print(Fore.GREEN + '-' * 50)
         print()
         choice = input(
             'Do you want to Hit or Stay, Enter H for Hit or S for Stay? ')
@@ -151,7 +157,7 @@ def player_hit_or_stay(score, turn):
             dealer_hit_or_stay(dealer_score, dealer_hand)
             break
         print(f"Your cards are {turn} for a total of {score}")
-    return '-' * 50
+    return Fore.YELLOW + '-' * 50
 
 
 def dealer_hit_or_stay(score, turn):
@@ -197,7 +203,7 @@ def calculate_winner():
                       f" and you have {player_score}")
     print()
     print()
-    print('-' * 50)
+    print(Fore.YELLOW + '-' * 50)
     play_another_hand()
 
 
