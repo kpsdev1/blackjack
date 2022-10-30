@@ -1,11 +1,10 @@
 # BlackJack
-This is a command line BlackJack game I created for my Portfolio Project 3 in Python and is played in a terminal hosted on Heroku. 
-The aim of BlackJack is to get 21 also know as BlackJack or as close as possible without busting(busting is when you go above 21). If you go
-bust the dealer automatically wins and if you have 21 or are closer to 21 than the dealer then you win. If the dealer lands on 17 or more they must 
-stand which means to stay and not take another card. If the dealer is below 17 they must hit which means they have to take another card.
+This is a command line BlackJack game I created for my Portfolio Project 3 in Python and is played in a terminal hosted on Heroku.
+This game is played by you the player against the dealer which is the computer. In this Game you try to get 21 or closer to 21 than the dealer.
+
 
 ## Table of Contents
-1. [UX Design](#ux-design)
+1. [How to play](#how-to-play)
 2. [Features](#features)
 3. [Demo](#Demo)
 4. [Future Features](#future-features)
@@ -16,9 +15,20 @@ stand which means to stay and not take another card. If the dealer is below 17 t
 9. [Credits](#credits)
 10. [Acknowledgements](#acknowledgements)
 
-## UX Design:
+## How to play:
+The aim of BlackJack is to get 21 also know as BlackJack or as close as possible without busting(busting is when you go above 21). If you go
+bust the dealer automatically wins. If you have 21 or are closer to 21 than the dealer then you win. If the dealer lands on 17 or more they must 
+stand which means to stay and not take another card. If the dealer is below 17 they must hit, this means they have to take another card.
+If the dealer busts and you do not then you wint the hand.
 
-## Features:
+
+## Features:  
+
+### Welcome Screen
+- When the user starts the game they are greeted with large text that says **Welecome to the BlackJack Table**.
+- To get the below effect I used the pyfiglet module and set the font equal to **slant** and the color to blue.  
+- The below this it will ask the user to enter their name.
+![Welcome text that loads when the game is started. ](readme-docs/images/welcome_screen.png)
 
 ## Demo:
 
