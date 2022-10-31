@@ -26,10 +26,10 @@ stand which means to stay and not take another card. If the dealer is below 17 t
 If the dealer busts and you do not then you wint the hand.
 
 
-## Features:  
+## Features:
 
 ### Welcome Screen
-- When the user starts the game they are greeted with large text that says **Welecome to the BlackJack Table**.
+- When the user starts the game they are greeted with large text that says **Welcome to the BlackJack Table**.
 - To get the below effect I used the pyfiglet module and set the font equal to **slant** and the color to blue.  
 - The below this it will ask the user to enter their name.
 ![Welcome text that loads when the game is started. ](readme-docs/images/welcome_screen.png)
@@ -37,6 +37,10 @@ If the dealer busts and you do not then you wint the hand.
 ## Demo:
 
 ## Future Features:
+- In the future I would like to add a betting system so that a player could bet like a real BlackJack table. With this implemented the player 
+could choose how much money they want to start with from a list and then before each hand is dealt. They could could also choose how much they want to bet
+and if they win they take one and half times that from the dealer like in real BlackJack and if they lose they just lose there bet.
+- I would also like to make it multiple player, like you have at a BlackJack table and everyone is betting against the dealer.(although this may be tricky to implement).
 
 ## Technologies Used:
 - Python was used to code the game.
