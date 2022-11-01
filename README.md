@@ -35,7 +35,8 @@ If the dealer busts and you do not then you wint the hand.
 
 ![Welcome text that loads when the game is started. ](readme-docs/images/welcome.png)  
 
-- After the user enters there name they will see a greeting message with their name and tell them to read the rules this will be printed out like a typewriter.
+### Rules section
+- After the user enters their name they will see a greeting message with their name and tell them to read the rules this will be printed out like a typewriter.
 - Then the user will seee all the rules of this BlackJack table, these will aslo be printed out like a typewriter.
 - Below the rules they will bes asked if they want ready for the cards to be dealt. if they awaqnt to play and are ready the user can type **Y**. If they
 do not wish to play and want to leave they can type **N** to leave.    
@@ -43,11 +44,13 @@ do not wish to play and want to leave they can type **N** to leave.
 
 ![Rules section](readme-docs/images/rules.png)
 
+### Dealing the cards
 - If the user decides to play then the cards will be dealt, the dealers will be dealt first followed by the players.
 - If the player does not have a blackJack(21) the they will be asked if they want to Hit or Stay.
 
 ![The first 2 cards dealt section](readme-docs/images/cards.png)
 
+### Winning Screen
 - If the user decides to Hit and his cards are then above 21 know as bust, then it will show that the dealer won as the player has bust.
 - If the player is still below 21 after having a third card dealt then it will ask them if they wish to recive another card and will continute to do
 so until they stay or bust.
@@ -56,6 +59,14 @@ so until they stay or bust.
 ![win](readme-docs/images/win.png)  
 
 ![Dealer wins](readme-docs/images/hit.png)  
+
+### End the Game
+- If the users want to play another game they can type **Y** and the cards for another round will be dealt.
+- If the users decides they have had enough and want to leave the game they can type **N** and they will be greeted with the text **GoodBye....**. This text will be displayed using
+the pyfiglet module and with the **slant** font and in the color yellow as can be seen in the below screenshot.
+  
+![Dealer wins](readme-docs/images/goodbye.png)    
+
 
 
 ## Demo:
@@ -86,8 +97,19 @@ and selecting **pycodestyle**. The PEP* erorrs would then be underlined in red a
   
 ![PEP8 testing ](readme-docs/images/pep8-testing.png)
 
+- I also test the site on Pythonchecker.com which is a Python PEP8 sytax checker and it return 100% with no errors. The site can be found [Heroku](https://www.pythonchecker.com/)
+  
+ ![Python Checker](readme-docs/images/python-checker.png) 
 
-## Bugs:
+## Bugs and Issues
+- After creating the project I was getting alot of PEP8 errors in, most of which were for **lines too long** as you can see in the below screenshot.
+- To fix this and conform to PEP8 standards I broke the lines up and made sure they did not go past 79 characters. 
+- On of the biggest issues I had with this project was getting to ace to be either 11 or 1 depending on you total score, each time I though I had figured it out,
+I would soon realise in testing that it was not correct. After doing alot of research online I read a comment that said it is better to set the ace to always be 1 and
+ then check if the total value is less than 11, if so add 10.
+
+ ![Errors ](readme-docs/images/errors.png)
+
 
 ## Deployment:
 This game was deployed on Heroku. The following steps were used to deploy the game to Heroku.
@@ -113,6 +135,7 @@ code on Github.
 - Aphrx quick video on YouTube show me how I could structure the game differently if i had used classes, this would be super helpful to anyone who is interested in creating blackjack game. the video can be found [here](https://www.youtube.com/watch?v=C82s5WufNUA).
 - Stack overflow was used to make the large welcome and goodbye text using pyfiglet and rich. The code snipit can be found [here](https://stackoverflow.com/questions/67474578/making-coloured-ascii-text-with-python).
 - Stack over flow was used to get the typewrite effect. A variation of the code snipit can be found [here](https://stackoverflow.com/questions/19911346/create-a-typewriter-effect-animation-for-strings-in-python)
+- A comment on reddit learn python thread helped me to understand how to set the ace value to either 1 or 11. The sub can be found [here](https://www.reddit.com/r/learnpython/).
 
 ## Acknowledgements:
 - I would like to thank my mentor Adegbenga Adeye for all help throughout the project and for being really positive about the course.
