@@ -33,7 +33,7 @@ If the dealer busts and you do not then you wint the hand.
 - To get the below effect I used the pyfiglet module and set the font equal to **slant** and the color to blue.  
 - The below this it will ask the user to enter their name.  
 
-![Welcome text that loads when the game is started. ](readme-docs/images/welcome_screen.png)  
+![Welcome text that loads when the game is started. ](readme-docs/images/welcome.png)  
 
 - After the user enters there name they will see a greeting message with their name and tell them to read the rules this will be printed out like a typewriter.
 - Then the user will seee all the rules of this BlackJack table, these will aslo be printed out like a typewriter.
