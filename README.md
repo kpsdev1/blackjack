@@ -34,6 +34,29 @@ If the dealer busts and you do not then you wint the hand.
 - The below this it will ask the user to enter their name.
 ![Welcome text that loads when the game is started. ](readme-docs/images/welcome_screen.png)
 
+- After the user enters there name they will see a greeting message with their name and tell them to read the rules this will be printed out like a typewriter.
+- Then the user will seee all the rules of this BlackJack table, these will aslo be printed out like a typewriter.
+- Below the rules they will bes asked if they want ready for the cards to be dealt. if they awaqnt to play and are ready the user can type **Y**. If they
+do not wish to play and want to leave they can type **N** to leave.    
+
+
+![Rules section](readme-docs/images/rules.png)
+
+- If the user decides to play then the cards will be dealt, the dealers will be dealt first followed by the players.
+- If the player does not have a blackJack(21) the they will be asked if they want to Hit or Stay.
+
+![The first 2 cards dealt section](readme-docs/images/cards.png)
+
+- If the user decides to Hit and his cards are then above 21 know as bust, then it will show that the dealer won as the player has bust.
+- If the player is still below 21 after having a third card dealt then it will ask them if they wish to recive another card and will continute to do
+so until they stay or bust.
+- If the player wins the hand then the winner message is in green(first screenshot below), but if the dealer wins the winning message is displyed in red(second screenshot below). Both the players and computers hand is displayed in blue beneath.
+
+![win](readme-docs/images/win.png)  
+
+![Dealer wins](readme-docs/images/hit.png)  
+
+
 ## Demo:
 
 ## Future Features:
