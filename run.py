@@ -53,6 +53,9 @@ def greeting():
     typewriter("4. Getting 21 is counted as blackJack no matter "
                "how many cards it takes.")
     print()
+    typewriter("5. If the player gets 21 with their first 2 cards they"
+               " automatically win")
+    print()
 
 
 def play():
