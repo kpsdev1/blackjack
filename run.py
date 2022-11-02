@@ -36,9 +36,19 @@ def greeting():
     welcome_sign = pyfiglet.figlet_format(
         'WELCOME TO THE BLACKJACK TABLE', font="slant")
     rprint(f'[blue]{welcome_sign}[/blue]')
-    name = input('Please enter your name? ')
-    typewriter(f"Hi {name}, Welcome to the BlackJack table. Please have a read"
-               " of the \nrules below before playing.")
+
+    # Checking to make sure that users name is not blank
+    while True:
+        name = input('Please enter your name? ').strip()
+        if name != '':
+            typewriter(f"Hi {name}, Welcome to the BlackJack table. Please have a read"
+                       " of the \nrules below before playing.")
+            break
+        else:
+            print()
+            print(Fore.RED + 'Name cannot be blank.')
+            print()
+
     print()
     print()
     typewriter("The rules of this BlackJack table are as follows. "

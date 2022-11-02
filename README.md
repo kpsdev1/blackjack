@@ -86,9 +86,15 @@ and if they win they take one and half times that from the dealer like in real B
 - [Heroku](https://en.wikipedia.org/wiki/Heroku) is used to deploy the app.
 
 ## Testing:
+
+### Manual Testing
 - I tested the game in the Gitpod terminal and worked as expected.
-- I tested the game locally in Vs Code terminal and also by running it in PyCharm and it worked fine.
+- I tested the game locally in VS Code terminal and also by running it in PyCharm and it worked fine.
 - I also test the game frequently since deploying it to the heroku terminal and it works correctly.
+
+| Feature | Test Performed | Expected Outcome | Result |
+|---------|----------------|------------------|--------|
+| Input Name | Enter blank spaces | Print error message and ask user to enter name again | Pass |
 
 ### Validator Testing
 - I tested the app using the PEP8 validator in gitpod, this I had to install by running **pip3 install pycodestyle** then searching for **Python: Select Linter**
