@@ -101,8 +101,35 @@ and if they win they take one and half times that from the dealer like in real B
 | Feature | Test Performed | Expected Outcome | Result |
 |---------|----------------|------------------|--------| 
 | Ask user if they are ready for the cards to be dealt| Enter random letters | Print error message and ask the user again| Pass |
-|                                                     | Enter Y | Deal the cards | Pass |
-|                      | Enter N | Print goodbye and exit | Pass |
+|    | Entered **y** for yes | Deal the cards | Pass |
+|    | Entered **n** for no | Print goodbye and exit | Pass |  
+
+
+| Feature | Test Performed | Expected Outcome | Result |
+|---------|----------------|------------------|--------|
+| Check if card values are correct | Played 30 hands | Cards should total the correct amount | Pass |
+|            | Make sure face cards have the correct value| Jack, Queen, king should be equal to 10 and Ace should be equal to 11 or 1 depending on the hand | Pass |
+
+
+| Feature | Test Performed | Expected Outcome | Result |
+|---------|----------------|------------------|--------|
+| If users score is less than 21 ask if they want to Hit or Stay | Entered random word | Prompt the user if they want to hit or stay again | Pass |
+|            | Entered **s** for stay | No extra card was dealt and the winner was computed | Pass |
+|            | Entered **h** for hit | No extra card was dealt and the winner was computed | Pass |
+
+
+| Feature | Test Performed | Expected Outcome | Result |
+|---------|----------------|------------------|--------|
+| Compute the winner | Won multiple hands | Expected to see a winning message and both the player and dealer totals | Pass |
+|            | Lost multiple hands | Expected to see a loser message and both the player and dealer totals | Pass |
+|            | Entered **h** for hit | No extra card was dealt and the winner was computed | Pass |
+
+
+| Feature | Test Performed | Expected Outcome | Result |
+|---------|----------------|------------------|--------|
+| Ask if the user want sto ply anther hand | Enter random letters | Print error message and ask the user again | Pass |
+|            | Entered **y** for yes | Deal cards for another hand | Pass |
+|            | Entered **n** for no | Print goodbye and exit | Pass |
 
 ### Validator Testing
 - I tested the app using the PEP8 validator in gitpod, this I had to install by running **pip3 install pycodestyle** then searching for **Python: Select Linter**
