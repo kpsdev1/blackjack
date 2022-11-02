@@ -8,9 +8,9 @@ This game is played by you the player against the dealer which is the computer. 
 - - -  
 
 ## Table of Contents
-1. [How to play](#how-to-play)
-2. [Features](#features)
-3. [Demo](#Demo)
+1. [Flow Chart](#Flow-Chart)
+2. [How to play](#how-to-play)
+3. [Features](#features)
 4. [Future Features](#future-features)
 5. [Technologies Used](#technologies-used)
 6. [Testing](#testing)
@@ -19,11 +19,16 @@ This game is played by you the player against the dealer which is the computer. 
 9. [Credits](#credits)
 10. [Acknowledgements](#acknowledgements)
 
+## Flow Chart
+
+![Flow Chart image](readme-docs/images/BlackJack.png) 
+
+
 ## How to play:
 The aim of BlackJack is to get 21 also know as BlackJack or as close as possible without busting(busting is when you go above 21). If you go
 bust the dealer automatically wins. If you have 21 or are closer to 21 than the dealer then you win. If the dealer lands on 17 or more they must 
 stand which means to stay and not take another card. If the dealer is below 17 they must hit, this means they have to take another card.
-If the dealer busts and you do not then you wint the hand.
+If the dealer busts and you do not then you win the hand.
 
 
 ## Features:
@@ -88,14 +93,12 @@ and if they win they take one and half times that from the dealer like in real B
 ## Testing:
 
 ### Manual Testing
-- I tested the game in the Gitpod terminal and worked as expected.
-- I tested the game locally in VS Code terminal and also by running it in PyCharm and it worked fine.
-- I also test the game frequently since deploying it to the heroku terminal and it works correctly.
 
 | Feature | Test Performed | Expected Outcome | Result |
 |---------|----------------|------------------|--------|
 | Input Name | Enter blank spaces | Print error message and ask user to enter name again | Pass |
 |            | Enter Name or letters | Welcome the user and print out the rules of the game | Pass |
+  
 
  
 | Feature | Test Performed | Expected Outcome | Result |
@@ -103,12 +106,14 @@ and if they win they take one and half times that from the dealer like in real B
 | Ask user if they are ready for the cards to be dealt| Enter random letters | Print error message and ask the user again| Pass |
 |    | Entered **y** for yes | Deal the cards | Pass |
 |    | Entered **n** for no | Print goodbye and exit | Pass |  
+  
 
 
 | Feature | Test Performed | Expected Outcome | Result |
 |---------|----------------|------------------|--------|
 | Check if card values are correct | Played 30 hands | Cards should total the correct amount | Pass |
 |            | Make sure face cards have the correct value| Jack, Queen, king should be equal to 10 and Ace should be equal to 11 or 1 depending on the hand | Pass |
+  
 
 
 | Feature | Test Performed | Expected Outcome | Result |
@@ -116,6 +121,7 @@ and if they win they take one and half times that from the dealer like in real B
 | If users score is less than 21 ask if they want to Hit or Stay | Entered random word | Prompt the user if they want to hit or stay again | Pass |
 |            | Entered **s** for stay | No extra card was dealt and the winner was computed | Pass |
 |            | Entered **h** for hit | No extra card was dealt and the winner was computed | Pass |
+  
 
 
 | Feature | Test Performed | Expected Outcome | Result |
@@ -123,6 +129,7 @@ and if they win they take one and half times that from the dealer like in real B
 | Compute the winner | Won multiple hands | Expected to see a winning message and both the player and dealer totals | Pass |
 |            | Lost multiple hands | Expected to see a loser message and both the player and dealer totals | Pass |
 |            | Entered **h** for hit | No extra card was dealt and the winner was computed | Pass |
+  
 
 
 | Feature | Test Performed | Expected Outcome | Result |
@@ -130,6 +137,9 @@ and if they win they take one and half times that from the dealer like in real B
 | Ask if the user want sto ply anther hand | Enter random letters | Print error message and ask the user again | Pass |
 |            | Entered **y** for yes | Deal cards for another hand | Pass |
 |            | Entered **n** for no | Print goodbye and exit | Pass |
+
+- I also tested the game in the Gitpod terminal and locally on VS Code terminal and everything worked as expected.
+
 
 ### Validator Testing
 - I tested the app using the PEP8 validator in gitpod, this I had to install by running **pip3 install pycodestyle** then searching for **Python: Select Linter**
