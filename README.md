@@ -95,7 +95,10 @@ and if they win they take one and half times that from the dealer like in real B
 | Feature | Test Performed | Expected Outcome | Result |
 |---------|----------------|------------------|--------|
 | Input Name | Enter blank spaces | Print error message and ask user to enter name again | Pass |
-
+| Input Name | Enter Name or letters | Welcome the user and print out the rules of the game | Pass |
+| Ask user if they are ready for the cards to be dealt| Enter random letters | Print error message and ask the user again| Pass |
+| Ask user if they are ready for the cards to be dealt | Enter Y | Deal the cards | Pass |
+| Ask user if they are ready for the cards to be dealt | Enter N | Print goodbye and exit | Pass |
 ### Validator Testing
 - I tested the app using the PEP8 validator in gitpod, this I had to install by running **pip3 install pycodestyle** then searching for **Python: Select Linter**
 and selecting **pycodestyle**. The PEP* erorrs would then be underlined in red and also listed in **Problems tab**
