@@ -1,6 +1,6 @@
 # BlackJack
 This is a command line BlackJack game I created for my Portfolio Project 3 in Python and is played in a terminal hosted on Heroku.
-This game is played by you the player against the dealer which is the computer. In this Game you try to get 21 or closer to 21 than the dealer.
+This game is played by you the player against the dealer which is the computer. In this game you try to get 21 or closer to 21 than the dealer.
   
  ![Am i responsive image](readme-docs/images/amiresponsive.png) 
 
@@ -74,8 +74,6 @@ the pyfiglet module and with the **slant** font and in the color yellow as can b
 
 
 
-## Demo:
-
 ## Future Features:
 - In the future I would like to add a betting system so that a player could bet like a real BlackJack table. With this implemented the player 
 could choose how much money they want to start with from a list and then before each hand is dealt. They could could also choose how much they want to bet
@@ -83,7 +81,8 @@ and if they win they take one and half times that from the dealer like in real B
 - I would also like to make it multiple player, like you have at a BlackJack table and everyone is betting against the dealer.(although this may be tricky to implement).
 
 ## Technologies Used:
-- Python was used to code the game.
+- [Lucid](https://www.lucidchart.com/pages/) was used to design the flow chart.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to code the game.
 - [Gitpod](https://www.gitpod.io/about) was used to create this app and then push everything to github.
 - [Visual Studio Code](https://en.wikipedia.org/wiki/Visual_Studio_Code) was used to work on the app locally.
 - [PyCharm](https://www.jetbrains.com/lp/pycharm-anaconda/) was also used to work on the app locally.
@@ -148,7 +147,7 @@ and selecting **pycodestyle**. The PEP* erorrs would then be underlined in red a
   
 ![PEP8 testing ](readme-docs/images/pep8-testing.png)
 
-- I also test the site on Pythonchecker.com which is a Python PEP8 sytax checker and it return 100% with no errors. The site can be found [Heroku](https://www.pythonchecker.com/)
+- I also test the site on Pythonchecker.com which is a Python PEP8 sytax checker and it return 100% with no errors. The site can be found [here](https://www.pythonchecker.com/)
   
  ![Python Checker](readme-docs/images/python-checker.png) 
 
