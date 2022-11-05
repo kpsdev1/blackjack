@@ -67,7 +67,7 @@ def greeting():
                " automatically win")
     print()
     typewriter("6. Jack(J), Queen(Q) and King(K) all equal 10,"
-               " Ace(A) is either 11 or 1 depending on your score")
+               " Ace(A) is either 11 or 1 \ndepending on your score")
     print()
     typewriter("7. You will only see one Card for the dealer at the start")
     print()
