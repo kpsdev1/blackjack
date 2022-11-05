@@ -41,8 +41,8 @@ def greeting():
     while True:
         name = input('Please enter your name? ').strip()
         if name != '':
-            typewriter(f"Hi {name}, Welcome to the BlackJack table. Please have a read"
-                       " of the \nrules below before playing.")
+            typewriter(f"Hi {name}, Welcome to the BlackJack table. Please"
+                       " have a read of the \nrules below before playing.")
             break
         else:
             print()
@@ -66,6 +66,11 @@ def greeting():
     typewriter("5. If the player gets 21 with their first 2 cards they"
                " automatically win")
     print()
+    typewriter("6. Jack(J), Queen(Q) and King(K) all equal 10,"
+               " Ace(A) is either 11 or 1 depending on your score")
+    print()
+    typewriter("7. You will only see one Card for the dealer at the start")
+    print()
 
 
 def play():
@@ -81,8 +86,6 @@ def play():
                       'Y for yes.\nOr press N to leave : ')
         print()
         if start.upper() == 'Y':
-            print('Dealing cards.......')
-            print()
             time.sleep(1)
             break
         elif start.upper() == 'N':
@@ -124,12 +127,13 @@ def player_total(turn):
     for ind in turn:
         if 'J' == ind or 'Q' == ind or 'K' == ind:
             player_score += 10
-        if 'A' == ind:
+        if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
+            player_score += ind
+    for ace in turn:
+        if 'A' == ace:
             player_score += 1
             if player_score <= 11:
                 player_score += 10
-        if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
-            player_score += ind
     return player_score
 
 
@@ -142,12 +146,13 @@ def dealer_total(turn):
     for ind in turn:
         if 'J' == ind or 'Q' == ind or 'K' == ind:
             dealer_score += 10
-        if 'A' == ind:
+        if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
+            dealer_score += ind
+    for ace in turn:
+        if 'A' == ace:
             dealer_score += 1
             if dealer_score <= 11:
                 dealer_score += 10
-        if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
-            dealer_score += ind
     return dealer_score
 
 
@@ -183,7 +188,7 @@ def dealer_hit_or_stay(score, turn):
         deal_card(turn)
         score = dealer_total(turn)
     if score >= 17 and score < 21:
-        print(f"Dealers stays with cards {turn} for a total of {score} ")
+        print(f"Dealers stays with cards {turn} for a total of {score}")
         print()
     print(f"Dealers Hand was {turn} with a total of {score}")
     print()
@@ -209,7 +214,7 @@ def calculate_winner():
     elif (21 - dealer_score) > (21 - player_score):
         print(Fore.GREEN + 'You Win')
     elif (21 - dealer_score) < (21 - player_score):
-        print(Fore.RED + 'The dealer Wins')
+        print(Fore.RED + 'The Dealer Wins')
     elif dealer_score == player_score:
         print(Fore.MAGENTA + 'Its a tie')
     print(Fore.BLUE + f"The dealer has {dealer_score}"
@@ -251,12 +256,15 @@ def play_hand():
     total_player = player_total
     player_choice = player_hit_or_stay
 
-    deal_for_dealer = deal_first_two_cards
+    deal_for_dealer = deal_card(dealer_hand)
     total_for_dealer = dealer_total
-    dealer_choice = dealer_hit_or_stay
-    first_2_dealer = deal_for_dealer(dealer_hand)
-
-    print(f"Dealer cards are {first_2_dealer} for "
+    dealing_message = pyfiglet.figlet_format(
+        'Dealing Cards.....', font="slant")
+    rprint(f'[green]{dealing_message }[/green]')
+    time.sleep(1)
+    print()
+    print()
+    print(f"Dealer cards are {deal_for_dealer} for "
           f"total of {total_for_dealer(dealer_hand)}")
     print()
     time.sleep(2)

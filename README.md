@@ -25,7 +25,7 @@ This game is played by you the player against the dealer which is the computer. 
 
 
 ## How to play:
-The aim of BlackJack is to get 21 also know as BlackJack or as close as possible without busting(busting is when you go above 21). If you go
+The aim of BlackJack is to get 21 also know as BlackJack or as close as possible without going bust(bust is when you go above 21). If you go
 bust the dealer automatically wins. If you have 21 or are closer to 21 than the dealer then you win. If the dealer lands on 17 or more they must 
 stand which means to stay and not take another card. If the dealer is below 17 they must hit, this means they have to take another card.
 If the dealer busts and you do not then you win the hand.
@@ -36,30 +36,31 @@ If the dealer busts and you do not then you win the hand.
 ### Welcome Screen
 - When the user starts the game they are greeted with large text that says **Welcome to the BlackJack Table**.
 - To get the below effect I used the pyfiglet module and set the font equal to **slant** and the color to blue.  
-- The below this it will ask the user to enter their name.  
+- Then below this it will ask the user to enter their name.  
 
 ![Welcome text that loads when the game is started. ](readme-docs/images/welcome.png)  
 
 ### Rules section
 - After the user enters their name they will see a greeting message with their name and tell them to read the rules this will be printed out like a typewriter.
 - Then the user will seee all the rules of this BlackJack table, these will aslo be printed out like a typewriter.
-- Below the rules they will bes asked if they want ready for the cards to be dealt. if they awaqnt to play and are ready the user can type **Y**. If they
+- Below the rules they will be asked if they are ready for the cards to be dealt. If they want to play and are ready the user can type **Y**. If they
 do not wish to play and want to leave they can type **N** to leave.    
 
 
-![Rules section](readme-docs/images/rules.png)
+![Rules Section](readme-docs/images/rules.png)
 
 ### Dealing the cards
 - If the user decides to play then the cards will be dealt, the dealers will be dealt first followed by the players.
+- Only one card will be dealt for the dealer, as in casino you will only see one card for the dealer as the other one woudl be face down.
 - If the player does not have a blackJack(21) the they will be asked if they want to Hit or Stay.
 
 ![The first 2 cards dealt section](readme-docs/images/cards.png)
 
 ### Winning Screen
 - If the user decides to Hit and his cards are then above 21 know as bust, then it will show that the dealer won as the player has bust.
-- If the player is still below 21 after having a third card dealt then it will ask them if they wish to recive another card and will continute to do
+- If the player is still below 21 after having a third card dealt then it will ask them if they wish to receive another card and will continute to do
 so until they stay or bust.
-- If the player wins the hand then the winner message is in green(first screenshot below), but if the dealer wins the winning message is displyed in red(second screenshot below). Both the players and computers hand is displayed in blue beneath.
+- If the player wins the hand then the winner message is in green(first screenshot below), but if the dealer wins the winning message is displyed in red(second screenshot below). Both the players and computers score is displayed in blue beneath.
 
 ![win](readme-docs/images/win.png)  
 
@@ -76,12 +77,12 @@ the pyfiglet module and with the **slant** font and in the color yellow as can b
 
 ## Future Features:
 - In the future I would like to add a betting system so that a player could bet like a real BlackJack table. With this implemented the player 
-could choose how much money they want to start with from a list and then before each hand is dealt. They could could also choose how much they want to bet
-and if they win they take one and half times that from the dealer like in real BlackJack and if they lose they just lose there bet.
+could choose how much money they want to start with from a list before each hand is dealt. They could could also choose how much they want to bet
+and if they win they take one and half times that from the dealer like in real BlackJack and if they lose they just lose their bet.
 - I would also like to make it multiple player, like you have at a BlackJack table and everyone is betting against the dealer.(although this may be tricky to implement).
 
 ## Technologies Used:
-- [Lucid](https://www.lucidchart.com/pages/) was used to design the flow chart.
+- [Lucidchart](https://www.lucidchart.com/pages/) was used to design the flow chart.
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to code the game.
 - [Gitpod](https://www.gitpod.io/about) was used to create this app and then push everything to github.
 - [Visual Studio Code](https://en.wikipedia.org/wiki/Visual_Studio_Code) was used to work on the app locally.
@@ -127,13 +128,13 @@ and if they win they take one and half times that from the dealer like in real B
 |---------|----------------|------------------|--------|
 | Compute the winner | Won multiple hands | Expected to see a winning message and both the player and dealer totals | Pass |
 |            | Lost multiple hands | Expected to see a loser message and both the player and dealer totals | Pass |
-|            | Entered **h** for hit | No extra card was dealt and the winner was computed | Pass |
+
   
 
 
 | Feature | Test Performed | Expected Outcome | Result |
 |---------|----------------|------------------|--------|
-| Ask if the user want sto ply anther hand | Enter random letters | Print error message and ask the user again | Pass |
+| Ask if the user wants to play anther hand | Enter random letters | Print error message and ask the user again | Pass |
 |            | Entered **y** for yes | Deal cards for another hand | Pass |
 |            | Entered **n** for no | Print goodbye and exit | Pass |
 
@@ -142,7 +143,7 @@ and if they win they take one and half times that from the dealer like in real B
 
 ### Validator Testing
 - I tested the app using the PEP8 validator in gitpod, this I had to install by running **pip3 install pycodestyle** then searching for **Python: Select Linter**
-and selecting **pycodestyle**. The PEP* erorrs would then be underlined in red and also listed in **Problems tab**
+and selecting **pycodestyle**. The PEP8 erorrs would then be underlined in red and also listed in **Problems tab**
 - As you can see from the below screenshot there is no errors. The 3 warnings below come with the code intitute template that I used and this does not affect anything.
   
 ![PEP8 testing ](readme-docs/images/pep8-testing.png)
@@ -173,16 +174,16 @@ and then click on **Create app**.
 - Next scroll down to **Buildpacks** and click **Add buildpack** choose **Python** and then click **Save changes**.
 - Repeat the above step and select **nodejs** and click **Save changes**.
 - Next go to the **Deploy tab**.
-- Under **Deployment method** choose Github and then click **Connect to GitHub** you will be probably be prompted to sign into your Github.
+- Under **Deployment method** choose Github and then click **Connect to GitHub** you will probably be prompted to sign into your Github.
 - Then you can search for you GitHub repository, in my case this was **blackjack** and click **connect**.
 - To deploy automatically you will need to select **Enable Automatic Deploys** which will rebuild the app everytime you push a change to GitHub.
 - To deploy manually go to the **Manual deploy** section below and click **Deploy Branch**. Just remember you will need to do this everytime you make a change to your
 code on Github.
-- Below you will see **your app was sucessfully deployed** with a **view** button below this that will take you to the url of you deployed app.
+- Below you will see **your app was sucessfully deployed** with a **view** button below this that will take you to the url of your deployed app.
 
 ## Credits:
-- Code Coach's video on YouTube showed me how to declare the deck and create the deal card function, it also helped me on how to structure the game.The Youtube video can be found [here](https://www.youtube.com/watch?v=mpL0Y01v6tY).
-- Aphrx quick video on YouTube show me how I could structure the game differently if i had used classes, this would be super helpful to anyone who is interested in creating blackjack game. the video can be found [here](https://www.youtube.com/watch?v=C82s5WufNUA).
+- Code Coach's video on YouTube showed me how to declare the deck and create the deal card function and how to calculate the winner, it also helped me on how to structure the game. The Youtube video can be found [here](https://www.youtube.com/watch?v=mpL0Y01v6tY).
+- Aphrx quick video on YouTube show me how I could structure the game differently if i had used classes, this would be super helpful to anyone who is interested in creating blackjack game. The video can be found [here](https://www.youtube.com/watch?v=C82s5WufNUA).
 - Stack overflow was used to make the large welcome and goodbye text using pyfiglet and rich. The code snipit can be found [here](https://stackoverflow.com/questions/67474578/making-coloured-ascii-text-with-python).
 - Stack over flow was used to get the typewrite effect. A variation of the code snipit can be found [here](https://stackoverflow.com/questions/19911346/create-a-typewriter-effect-animation-for-strings-in-python)
 - A comment on reddit learn python thread helped me to understand how to set the ace value to either 1 or 11. The sub can be found [here](https://www.reddit.com/r/learnpython/).
