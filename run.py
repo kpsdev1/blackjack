@@ -46,7 +46,7 @@ def greeting():
             break
         else:
             print()
-            print(Fore.RED + 'Name cannot be blank.')
+            print(Fore.LIGHTRED_EX + 'Name cannot be blank.')
             print()
 
     print()
@@ -93,7 +93,7 @@ def play():
             time.sleep(1)
             sys.exit()
         else:
-            print('Invalid response')
+            print(Fore.LIGHTRED_EX + 'Invalid response')
             print()
 
 
@@ -120,39 +120,39 @@ def deal_card(turn):
 
 def player_total(turn):
     """
-    Function to calculate the players total
+    This is the Function
+    to calculate the players total
     """
     global player_score
     player_score = 0
     for ind in turn:
+        if 'A' == ind:
+            player_score += 1
         if 'J' == ind or 'Q' == ind or 'K' == ind:
             player_score += 10
         if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
             player_score += ind
-    for ace in turn:
-        if 'A' == ace:
-            player_score += 1
-            if player_score <= 11:
-                player_score += 10
+    if 'A' in player_hand and player_score <= 11:
+        player_score += 10
     return player_score
 
 
 def dealer_total(turn):
     """
-    Function to calculate dealers total
+    This is the Function
+    to calculate dealers total
     """
     global dealer_score
     dealer_score = 0
     for ind in turn:
+        if 'A' == ind:
+            dealer_score += 1
         if 'J' == ind or 'Q' == ind or 'K' == ind:
             dealer_score += 10
         if 'J' != ind and 'Q' != ind and 'K' != ind and 'A' != ind:
             dealer_score += ind
-    for ace in turn:
-        if 'A' == ace:
-            dealer_score += 1
-            if dealer_score <= 11:
-                dealer_score += 10
+    if 'A' in dealer_hand and dealer_score <= 11:
+        dealer_score += 10
     return dealer_score
 
 
@@ -174,6 +174,9 @@ def player_hit_or_stay(score, turn):
         elif choice.upper() == 'S':
             dealer_hit_or_stay(dealer_score, dealer_hand)
             break
+        else:
+            print(Fore.LIGHTRED_EX + 'Invalid response')
+            print()
         print(f"Your cards are {turn} for a total of {score}")
     return Fore.YELLOW + '-' * 50
 
@@ -247,7 +250,7 @@ def play_another_hand():
             time.sleep(1)
             sys.exit()
         else:
-            print('Invalid response')
+            print(Fore.LIGHTRED_EX + 'Invalid response')
             print()
 
 
@@ -276,8 +279,8 @@ def play_hand():
 
 
 def main():
-    greeting()
-    play()
+    # greeting()
+    # play()
     play_hand()
 
 
