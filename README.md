@@ -89,6 +89,13 @@ and if they win they take one and half times that from the dealer like in real B
 - [PyCharm](https://www.jetbrains.com/lp/pycharm-anaconda/) was also used to work on the app locally.
 - [Github](https://en.wikipedia.org/wiki/GitHub) is used to store the repository.
 - [Heroku](https://en.wikipedia.org/wiki/Heroku) is used to deploy the app.
+- I also used the following Python libraries
+    * [Random](https://docs.python.org/3/library/random.html)
+    * [sys](https://docs.python.org/3/library/sys.html)
+    * [time](https://docs.python.org/3/library/time.html)
+    * [pyfiglet](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/)
+    * [Rich](https://rich.readthedocs.io/en/stable/introduction.html)
+    * [colorama](https://linuxhint.com/colorama-python/)
 
 ## Testing:
 
