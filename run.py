@@ -279,8 +279,8 @@ def play_hand():
 
 
 def main():
-    # greeting()
-    # play()
+    greeting()
+    play()
     play_hand()
 
 
