@@ -14,7 +14,7 @@ This game is played by you the player against the dealer which is the computer. 
 4. [Future Features](#future-features)
 5. [Technologies Used](#technologies-used)
 6. [Testing](#testing)
-7. [Bugs](#bugs)
+7. [Bugs](#bugs-and-issues)
 8. [Deployment](#deployment)
 9. [Credits](#credits)
 10. [Acknowledgements](#acknowledgements)
