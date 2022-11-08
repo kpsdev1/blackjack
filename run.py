@@ -64,7 +64,7 @@ def greeting():
 
     typewriter("7. You will only see one Card for the dealer at the start.\n")
     typewriter("8. The Dealer will Stand(stay) on a hand that is greater than"
-               " or equal to 17.\n")
+               " or equal to 17.\n\n")
 
 
 def play():
@@ -75,9 +75,8 @@ def play():
     """
     time.sleep(1)
     while True:
-        print()
-        start = input('Are you ready for the cards to be dealt? '
-                      'Y for yes.\nOr press N to leave : ')
+        start = input('Are you ready for the cards to be dealt?'
+                      ' Enter Y for yes.\nOr N to leave : ')
         print()
         if start.upper() == 'Y':
             time.sleep(1)
@@ -87,8 +86,7 @@ def play():
             time.sleep(1)
             sys.exit()
         else:
-            print(Fore.LIGHTRED_EX + 'Invalid response')
-            print()
+            print(Fore.LIGHTRED_EX + 'Invalid response \n')
 
 
 def deal_first_two_cards(turn):
@@ -166,8 +164,7 @@ def player_hit_or_stay(score, turn):
     asks the player if they want to Hit or stay
     """
     while score < 21:
-        print(Fore.GREEN + '-' * 50)
-        print()
+        print(Fore.GREEN + '-' * 50 + '\n')
         choice = input(
             'Do you want to Hit or Stay, Enter H for Hit or S for Stay? ')
         print()
@@ -179,8 +176,8 @@ def player_hit_or_stay(score, turn):
             dealer_hit_or_stay(dealer_score, dealer_hand)
             break
         else:
-            print(Fore.LIGHTRED_EX + 'Invalid response')
-            print()
+            print(Fore.LIGHTRED_EX + 'Invalid response \n')
+
         print(f"Your cards are {turn} for a total of {score}")
     return Fore.YELLOW + '-' * 50
 
@@ -195,10 +192,9 @@ def dealer_hit_or_stay(score, turn):
         deal_card(turn)
         score = dealer_total(turn)
     if score >= 17 and score < 21:
-        print(f"Dealers stays with cards {turn} for a total of {score}")
-        print()
-    print(f"Dealers Hand was {turn} with a total of {score}")
-    print()
+        print(f"Dealers stays with cards {turn} for a total of {score} \n")
+
+    print(f"Dealers Hand was {turn} with a total of {score} \n")
 
 
 def calculate_winner():
@@ -206,8 +202,7 @@ def calculate_winner():
     This function calculates the winner
     and also calls the play another hand function
     """
-    print()
-    print()
+    print("\n")
     if player_score == 21 and dealer_score != 21:
         print(Fore.GREEN + 'You have blackJack, You Win')
     elif player_score > 21:
@@ -225,9 +220,7 @@ def calculate_winner():
     elif dealer_score == player_score:
         print(Fore.MAGENTA + 'Its a tie')
     print(Fore.BLUE + f"The dealer has {dealer_score}"
-                      f" and you have {player_score}")
-    print()
-    print()
+                      f" and you have {player_score} \n\n")
     print(Fore.YELLOW + '-' * 50)
     play_another_hand()
 
@@ -244,9 +237,7 @@ def play_another_hand():
         play_again = input('Do you want to play again, Enter Y for Yes or '
                            'N for No? ')
         if play_again.upper() == 'Y':
-            print()
-            print()
-            print()
+            print("\n\n")
             dealer_hand = []
             player_hand = []
             play_hand()
@@ -255,8 +246,7 @@ def play_another_hand():
             time.sleep(1)
             sys.exit()
         else:
-            print(Fore.LIGHTRED_EX + 'Invalid response')
-            print()
+            print(Fore.LIGHTRED_EX + '\nInvalid response \n')
 
 
 def play_hand():
@@ -275,15 +265,14 @@ def play_hand():
         'Dealing Cards.....', font="slant")
     rprint(f'[green]{dealing_message }[/green]')
     time.sleep(1)
-    print()
-    print()
+
+    print("\n")
     print(f"Dealers card is {deal_for_dealer} for "
-          f"total of {total_for_dealer(dealer_hand)}")
-    print()
+          f"total of {total_for_dealer(dealer_hand)} \n")
     time.sleep(2)
     print(f"Your cards are {deal_for_player(player_hand)} and "
-          f"your total is {total_player(player_hand)}")
-    print()
+          f"your total is {total_player(player_hand)} \n")
+
     print(player_choice(player_score, player_hand))
     calculate_winner()
 
