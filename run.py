@@ -53,11 +53,11 @@ def greeting():
 
     typewriter("1. Closest to 21 wins the hand.\n")
     typewriter("2. If you score above 21, that is bust and the Dealer wins.\n")
-    typewriter("4. If you stay, and the Dealer Busts then you win.\n")
+    typewriter("4. If you stay, and the Dealer busts then you win.\n")
     typewriter("4. Getting 21 is counted as BlackJack no matter "
                "how many cards it takes.\n")
 
-    typewriter("5. If the player gets 21 they automatically win.\n")
+    typewriter("5. If the Player gets 21 they automatically win.\n")
     typewriter("6. Jack(J), Queen(Q) and King(K) all equal 10,"
                " Ace(A) is either 11 or 1 \ndepending on your score.\n")
 
