@@ -41,14 +41,13 @@ def greeting():
     while True:
         name = input('Please enter your name? ').strip()
         if name != '':
-            typewriter(f"Hi {name}, Welcome to the BlackJack table. Please"
-                       " have a read of the \nrules below before playing.")
+            typewriter(f"\nHi {name}, Welcome to the BlackJack table. Please "
+                       "have a read of the \nrules below before playing.\n\n")
             break
         else:
             print()
             print(Fore.LIGHTRED_EX + 'Name cannot be blank.\n')
 
-    print("\n\n")
     typewriter("The rules of this BlackJack table are as follows. "
                "Please read Carefully: \n")
 
