@@ -1,4 +1,4 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Importing from libraries and declaring global variables
 import random
 import sys
 import time
@@ -20,7 +20,7 @@ goodbye = pyfiglet.figlet_format('GoodBye...........', font="slant")
 
 def typewriter(words):
     """
-    To print text like a type writer
+    To print text like a typewriter
     """
     for c in words:
         sys.stdout.write(c)
@@ -46,30 +46,23 @@ def greeting():
             break
         else:
             print()
-            print(Fore.LIGHTRED_EX + 'Name cannot be blank.')
-            print()
+            print(Fore.LIGHTRED_EX + 'Name cannot be blank.\n')
 
-    print()
-    print()
+    print("\n\n")
     typewriter("The rules of this BlackJack table are as follows. "
-               "Please read Carefully:")
-    print()
-    typewriter("1. Closest to 21 wins the hand.")
-    print()
-    typewriter("2. If you score above 21, that is bust and the Dealer wins.")
-    print()
-    typewriter("4. If you stay, and the Dealer Busts then you win.")
-    print()
+               "Please read Carefully: \n")
+
+    typewriter("1. Closest to 21 wins the hand.\n")
+    typewriter("2. If you score above 21, that is bust and the Dealer wins.\n")
+    typewriter("4. If you stay, and the Dealer Busts then you win.\n")
     typewriter("4. Getting 21 is counted as blackJack no matter "
-               "how many cards it takes.")
-    print()
-    typewriter("5. If the player gets 21 they automatically win.")
-    print()
+               "how many cards it takes.\n")
+
+    typewriter("5. If the player gets 21 they automatically win.\n")
     typewriter("6. Jack(J), Queen(Q) and King(K) all equal 10,"
-               " Ace(A) is either 11 or 1 \ndepending on your score.")
-    print()
-    typewriter("7. You will only see one Card for the dealer at the start.")
-    print()
+               " Ace(A) is either 11 or 1 \ndepending on your score.\n")
+
+    typewriter("7. You will only see one Card for the dealer at the start.\n")
 
 
 def play():
@@ -98,29 +91,34 @@ def play():
 
 def deal_first_two_cards(turn):
     """
-    This deals the user and dealer the first 2 cards
+    This deals the user their first 2 cards
     """
     for i in range(2):
         cards = random.choice(deck)
         turn.append(cards)
-        deck.remove(cards)
     return turn
 
 
 def deal_card(turn):
     """
-    This deals the next cards
+    This deals the a single card
+    which is drawn first for the dealer and
+    each time the dealer or user Hits.
     """
     card = random.choice(deck)
     turn.append(card)
-    deck.remove(card)
     return turn
 
 
 def player_total(turn):
     """
-    This is the Function
-    to calculate the players total
+    This is the Function to calculate the players
+    total it sets the Jack, Queen and King value
+    equal to 10. It sets number cards equal to their value.
+    It then sets the Ace equal to 1 and if the total is
+    less than or equal to 11 it adds 10 which is what gives
+    the Ace the value of 11. This is how it makes the correct
+    decision that Ace is either 11 or 1.
     """
     global player_score
     player_score = 0
@@ -138,8 +136,13 @@ def player_total(turn):
 
 def dealer_total(turn):
     """
-    This is the Function
-    to calculate dealers total
+    This is the Function to calculate the Dealers
+    total it sets the Jack, Queen and King value
+    equal to 10. It sets number cards equal to their value.
+    It then sets the Ace equal to 1 and if the total is
+    less than or equal to 11 it adds 10 which is what gives
+    the Ace the value of 11. This is how it makes the correct
+    decision that Ace is either 11 or 1.
     """
     global dealer_score
     dealer_score = 0
@@ -158,7 +161,7 @@ def dealer_total(turn):
 def player_hit_or_stay(score, turn):
     """
     If the score is less than 21 the function
-    asks the player if they want to it or stay
+    asks the player if they want to Hit or stay
     """
     while score < 21:
         print(Fore.GREEN + '-' * 50)
@@ -184,7 +187,7 @@ def dealer_hit_or_stay(score, turn):
     """
     While the dealers score is
     less than 17 it will deal them a card
-    as the deal always stnds on 17
+    as the dealer always stands on 17
     """
     while score < 17:
         deal_card(turn)
@@ -236,7 +239,8 @@ def play_another_hand():
     global dealer_hand
     global player_hand
     while True:
-        play_again = input('Do you want to play again, Y for Yes, N for No? ')
+        play_again = input('Do you want to play again, Enter Y for Yes or '
+                           'N for No? ')
         if play_again.upper() == 'Y':
             print()
             print()
@@ -254,19 +258,24 @@ def play_another_hand():
 
 
 def play_hand():
+    """
+    This is the function that plays the hands by calling the
+    deal cards functions for the dealer and player and also totals
+    their scores and checks the winner
+    """
     deal_for_player = deal_first_two_cards
     total_player = player_total
     player_choice = player_hit_or_stay
-
     deal_for_dealer = deal_card(dealer_hand)
     total_for_dealer = dealer_total
+
     dealing_message = pyfiglet.figlet_format(
         'Dealing Cards.....', font="slant")
     rprint(f'[green]{dealing_message }[/green]')
     time.sleep(1)
     print()
     print()
-    print(f"Dealer cards are {deal_for_dealer} for "
+    print(f"Dealers card is {deal_for_dealer} for "
           f"total of {total_for_dealer(dealer_hand)}")
     print()
     time.sleep(2)
@@ -278,6 +287,10 @@ def play_hand():
 
 
 def main():
+    """
+    Main function which calls all the
+    functions in correct order for the game to run
+    """
     greeting()
     play()
     play_hand()
