@@ -64,7 +64,7 @@ def greeting():
 
     typewriter("7. You will only see one Card for the dealer at the start.\n")
     typewriter("8. The Dealer will Stand(stay) on a hand that is greater than"
-               " or equal to 17.")
+               " or equal to 17.\n")
 
 
 def play():
