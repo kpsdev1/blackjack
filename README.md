@@ -25,7 +25,7 @@ This game is played by you the player against the dealer which is the computer. 
 
 
 ## How to play:
-The aim of BlackJack is to get 21 also know as BlackJack or as close as possible without going bust(bust is when you go above 21). If you go
+The aim of BlackJack is to get 21 also known as BlackJack or as close as possible without going bust(bust is when you go above 21). If you go
 bust the dealer automatically wins. If you have 21 or are closer to 21 than the dealer then you win. If the dealer lands on 17 or more they must 
 stand which means to stay and not take another card. If the dealer is below 17 they must hit, this means they have to take another card.
 If the dealer busts and you do not then you win the hand.
@@ -42,7 +42,7 @@ If the dealer busts and you do not then you win the hand.
 
 ### Rules section
 - After the user enters their name they will see a greeting message with their name and tell them to read the rules this will be printed out like a typewriter.
-- Then the user will seee all the rules of this BlackJack table, these will aslo be printed out like a typewriter.
+- Then the user will see all the rules of this BlackJack table, these will aslo be printed out like a typewriter.
 - Below the rules they will be asked if they are ready for the cards to be dealt. If they want to play and are ready the user can type **Y**. If they
 do not wish to play and want to leave they can type **N** to leave.    
 
@@ -51,13 +51,13 @@ do not wish to play and want to leave they can type **N** to leave.
 
 ### Dealing the cards
 - If the user decides to play then the cards will be dealt, the dealers will be dealt first followed by the players.
-- Only one card will be dealt for the dealer, as in casino you will only see one card for the dealer as the other one woudl be face down.
-- If the player does not have a blackJack(21) the they will be asked if they want to Hit or Stay.
+- Only one card will be dealt for the dealer, as in casino you will only see one card for the dealer as the other one would be face down.
+- If the player does not have blackJack(21) they will be asked if they want to Hit or Stay.
 
 ![The first 2 cards dealt section](readme-docs/images/cards.png)
 
 ### Winning Screen
-- If the user decides to Hit and his cards are then above 21 know as bust, then it will show that the dealer won as the player has bust.
+- If the user decides to Hit and his cards are then above 21 known as bust, then it will show that the dealer has won as the player has bust.
 - If the player is still below 21 after having a third card dealt then it will ask them if they wish to receive another card and will continute to do
 so until they stay or bust.
 - If the player wins the hand then the winner message is in green(first screenshot below), but if the dealer wins the winning message is displyed in red(second screenshot below). Both the players and computers score is displayed in blue beneath.
@@ -69,7 +69,7 @@ so until they stay or bust.
 ### End the Game
 - If the users want to play another game they can type **Y** and the cards for another round will be dealt.
 - If the users decides they have had enough and want to leave the game they can type **N** and they will be greeted with the text **GoodBye....**. This text will be displayed using
-the pyfiglet module and with the **slant** font and in the color yellow as can be seen in the below screenshot.
+the pyfiglet module and with the **slant** font and in the colour yellow as can be seen in the below screenshot.
   
 ![Dealer wins](readme-docs/images/goodbye.png)    
 
@@ -77,8 +77,8 @@ the pyfiglet module and with the **slant** font and in the color yellow as can b
 
 ## Future Features:
 - In the future I would like to add a betting system so that a player could bet like a real BlackJack table. With this implemented the player 
-could choose how much money they want to start with from a list before each hand is dealt. They could could also choose how much they want to bet
-and if they win they take one and half times that from the dealer like in real BlackJack and if they lose they just lose their bet.
+could choose how much money they want to start with from a list before each hand is dealt. They could also choose how much they want to bet
+and if they win they take one and half times that amount from the dealer like in real BlackJack and if they lose they just lose their bet.
 - I would also like to make it multiple player, like you have at a BlackJack table and everyone is betting against the dealer.(although this may be tricky to implement).
 
 ## Technologies Used:
@@ -103,8 +103,8 @@ and if they win they take one and half times that from the dealer like in real B
 
 | Feature | Test Performed | Expected Outcome | Result |
 |---------|----------------|------------------|--------|
-| Input Name | Enter blank spaces | Print error message and ask user to enter name again | Pass |
-|            | Enter Name or letters | Welcome the user and print out the rules of the game | Pass |
+| Input Name | Enter blank spaces | Print error message and ask user to enter their name again | Pass |
+|            | Enter Name or characters | Welcome the user and print out the rules of the game | Pass |
   
 
  
@@ -160,9 +160,9 @@ and selecting **pycodestyle**. The PEP8 erorrs would then be underlined in red a
  ![Python Checker](readme-docs/images/python-checker.png) 
 
 ## Bugs and Issues
-- After creating the project I was getting alot of PEP8 errors in, most of which were for **lines too long** as you can see in the below screenshot.
+- After creating the project I was getting alot of PEP8 errors, most of which were for **lines too long** as you can see in the below screenshot.
 - To fix this and conform to PEP8 standards I broke the lines up and made sure they did not go past 79 characters. 
-- On of the biggest issues I had with this project was getting to ace to be either 11 or 1 depending on you total score, each time I though I had figured it out,
+- On of the biggest issues I had with this project was getting to ace to be either 11 or 1 depending on your total score, each time I though I had figured it out,
 I would soon realise in testing that it was not correct. After doing alot of research online I read a comment that said it is better to set the ace to always be 1 and
  then check if the total value is less than 11, if so add 10.
 
@@ -173,7 +173,7 @@ I would soon realise in testing that it was not correct. After doing alot of res
 This game was deployed on Heroku. The following steps were used to deploy the game to Heroku.
 - First make sure you are signed into Heroku.
 - Then on the main dashboard select **New** and then choose **Create new app** from the drop down menu.
-- Then you will need to choose a name for your project(this name has to be unique to Heroku) and also choose the region, based on where you are located(as I'm in Europe so I chose Europe)
+- Then you will need to choose a name for your project(this name has to be unique to Heroku) and also choose the region, based on where you are located(as I'm in Europe, I chose Europe)
 and then click on **Create app**.
 - Then go to the **Settings** tab.
 - In **Settings** click on **Reveal Config Vars** and enter the following key **Port** with the Value of **8000**.
@@ -182,14 +182,14 @@ and then click on **Create app**.
 - Repeat the above step and select **nodejs** and click **Save changes**.
 - Next go to the **Deploy tab**.
 - Under **Deployment method** choose Github and then click **Connect to GitHub** you will probably be prompted to sign into your Github.
-- Then you can search for you GitHub repository, in my case this was **blackjack** and click **connect**.
+- Then you can search for your GitHub repository, in my case this was **blackjack** and click **connect**.
 - To deploy automatically you will need to select **Enable Automatic Deploys** which will rebuild the app everytime you push a change to GitHub.
 - To deploy manually go to the **Manual deploy** section below and click **Deploy Branch**. Just remember you will need to do this everytime you make a change to your
 code on Github.
 - Below you will see **your app was sucessfully deployed** with a **view** button below this that will take you to the url of your deployed app.
 
 ## Credits:
-- Code Coach's video on YouTube showed me how to declare the deck and create the deal card function and how to calculate the winner, it also helped me on how to structure the game. The Youtube video can be found [here](https://www.youtube.com/watch?v=mpL0Y01v6tY).
+- Code Coach's video on YouTube showed me how to create the deal card function and how to calculate the winner, it also helped me on how to structure the game. The Youtube video can be found [here](https://www.youtube.com/watch?v=mpL0Y01v6tY).
 - Aphrx quick video on YouTube show me how I could structure the game differently if i had used classes, this would be super helpful to anyone who is interested in creating blackjack game. The video can be found [here](https://www.youtube.com/watch?v=C82s5WufNUA).
 - Stack overflow was used to make the large welcome and goodbye text using pyfiglet and rich. The code snipit can be found [here](https://stackoverflow.com/questions/67474578/making-coloured-ascii-text-with-python).
 - Stack over flow was used to get the typewrite effect. A variation of the code snipit can be found [here](https://stackoverflow.com/questions/19911346/create-a-typewriter-effect-animation-for-strings-in-python)

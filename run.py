@@ -75,7 +75,7 @@ def play():
     time.sleep(1)
     while True:
         start = input('Are you ready for the cards to be dealt?'
-                      ' Enter Y for yes.\nOr N to leave : ')
+                      ' Enter Y for yes.\nor N to leave : ')
         print()
         if start.upper() == 'Y':
             time.sleep(1)
